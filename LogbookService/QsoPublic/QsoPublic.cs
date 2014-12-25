@@ -21,6 +21,7 @@ namespace Model
         public string MyCounty { get; set; }
         public string CQZone { get; set; }
         public DateTime StartDTG { get; set; }
+        public DateTime EndDtg { get; set; }
         public string Fist { get; set; }
         public decimal Frequency { get; set; }
         public string MyGrid { get; set; }
