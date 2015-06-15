@@ -1,4 +1,5 @@
 ﻿using Adiflib;
+using Shows.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,11 @@ namespace AdifConvertConsole
         {
             var adifReader = new AdifReader();
 
-           var log = adifReader.ReadAdifFile(@"D:\DShare\AClogADIF.adi");
+            var log = adifReader.ReadAdifFile(@"D:\DShare\AClogADIF.adi");
+            foreach (var qso in log.QSOList)
+            {
+                CouchDbHandler.SaveQSO(qso);
+            }
         }
     }
 }

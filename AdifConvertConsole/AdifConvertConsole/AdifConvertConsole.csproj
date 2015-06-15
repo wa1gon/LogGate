@@ -53,6 +53,10 @@
       <Project>{864b53d9-271f-46fd-a26f-b4a57cd33aec}</Project>
       <Name>Adiflib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LogGateLibrary\LogGateLibrary.csproj">
+      <Project>{71479757-4ac2-469f-a364-eb45e21ec141}</Project>
+      <Name>LogGateLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

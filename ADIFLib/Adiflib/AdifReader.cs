@@ -49,6 +49,7 @@ namespace Adiflib
                     {
                         fieldEnd = loc;
                         string tag = fileContent.Substring(fieldStart, fieldEnd - fieldStart);
+                        tag = tag.ToLower();
                         loc++;
 
                         if (tag.ToLower() == "eor")

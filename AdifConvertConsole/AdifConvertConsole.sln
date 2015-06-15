@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdifConvertConsole", "AdifC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adiflib", "..\ADIFLib\Adiflib\Adiflib.csproj", "{864B53D9-271F-46FD-A26F-B4A57CD33AEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogGateLibrary", "LogGateLibrary\LogGateLibrary.csproj", "{71479757-4AC2-469F-A364-EB45E21EC141}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{864B53D9-271F-46FD-A26F-B4A57CD33AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{864B53D9-271F-46FD-A26F-B4A57CD33AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{864B53D9-271F-46FD-A26F-B4A57CD33AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71479757-4AC2-469F-A364-EB45E21EC141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71479757-4AC2-469F-A364-EB45E21EC141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71479757-4AC2-469F-A364-EB45E21EC141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71479757-4AC2-469F-A364-EB45E21EC141}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
