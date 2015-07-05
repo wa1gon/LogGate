@@ -1,4 +1,5 @@
-﻿using Adiflib;
+﻿
+using LogGateLibrary;
 using MyCouch;
 using MyCouch.Requests;
 using MyCouch.Responses;
@@ -12,7 +13,7 @@ namespace Shows.Infrastructure
 {
     public class CouchDbHandler
     {
-        public const string LogGateUrl = "http://wa1gon:kb1etc@localhost:5984/loggate";
+        public const string LogGateUrl = "http://wa1gon:****@localhost:5984/loggate";
         static public SortedList<string, Qso> GetQsos()
         {
             Qso qso;
@@ -292,19 +293,6 @@ namespace Shows.Infrastructure
         //        dynamic asso = client.GetByIdAsync<Association>(assoId).Result;
         //        return asso;
         //    }
-        //}
-        //static public bool Replicate()
-        //{
-        //    using (var client = new MyCouchServerClient("http://wa1gon:kb1etc@localhost:5984"))
-        //    {
-        //        var id = Guid.NewGuid().ToString("n");
-        //        var localToRemote = client.Replicator.ReplicateAsync(id, "talkjunky", "https://talkjunky:kb1etc73@db.talkjunky.com/talkjunky").Result;
-
-        //        id = Guid.NewGuid().ToString("n");
-        //        var remoteToLocal = client.Replicator.ReplicateAsync(id, "https://talkjunky:kb1etc73@db.talkjunky.com/talkjunky", "talkjunky").Result;
-        //        Task.WaitAll();
-        //    }
-        //    return true;
         //}
 
     }

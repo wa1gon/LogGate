@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogGateLibrary;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,6 +10,14 @@ namespace Adiflib
 {
     public class AdifReader
     {
+
+        private class NameValuePair
+        {
+            public string Name { get; set; }
+            public string Value { get; set; }
+        }
+
+        private int loc = 0;
         private string fileContent;
         public AdifReader()
         {
@@ -28,7 +37,7 @@ namespace Adiflib
                 //you then have to process the string
             }
 
-            int loc;
+            loc = 0;
             if (fileContent[0] != '<')
             {
                 loc = ProcessHeader(log, ref foundHeader);
@@ -60,7 +69,13 @@ namespace Adiflib
                         }
                         else
                         {
-                            loc = AddNameValuePairToQsoList( loc, qso, tag);
+                            var nv = FindNextTagNameValuePair(tag);
+                            switch (nv.Name)
+                            {
+                                default:
+                                    qso.Fields.Add(nv.Name, nv.Value);
+                                    break;
+                            }
                         }
 
                     }
@@ -88,15 +103,18 @@ namespace Adiflib
             return loc;
         }
 
-        private int AddNameValuePairToQsoList( int loc, Qso qso, string tag)
+        private NameValuePair FindNextTagNameValuePair( string tag)
         {
             string[] tagSplit = tag.Split(':');
             int dataLen = int.Parse(tagSplit[1]);
 
             string val = fileContent.Substring(loc, dataLen);
-            qso.Fields.Add(tagSplit[0], val);
+
+            var nvPar = new NameValuePair();
+            nvPar.Name = tagSplit[0];
+            nvPar.Value = val;
             loc = loc + dataLen;
-            return loc;
+            return nvPar;
         }
     }
 }
